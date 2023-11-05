@@ -1165,3 +1165,7 @@ video {
     }
 }
 
+::selection {
+    background-color: #0C356A; 
+    color: #F5F7F8; 
+}
