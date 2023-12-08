@@ -4,6 +4,7 @@
     font-family: 'Sofia Sans Condensed', sans-serif;
 }
 
+
 .header {
     min-height: 100vh;
     width: 100%;
@@ -586,13 +587,16 @@ h3 {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
 }
+
 .section-head {
     left: 0;
     height: max-content;
@@ -606,8 +610,10 @@ h3 {
     color: whitesmoke;
     background: rgb(4, 18, 74);
 }
+
 .section-head:hover {
-    animation: pulsate 1s infinite; /* Apply the pulsating animation on hover */
+    animation: pulsate 1s infinite;
+    /* Apply the pulsating animation on hover */
 }
 
 
@@ -794,6 +800,7 @@ h3 {
 /*tabs*/
 .tabs {
     display: flex;
+    margin-top: 50px;
 }
 
 .tabs .tabn {
@@ -827,13 +834,15 @@ h3 {
 
 nav {
     width: 100%;
-    position: absolute;
-    top: 0%;
     left: 0;
-    padding: 20px 8%;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #0C356A;
+    z-index: 1000;
 }
 
 nav .logo {
@@ -852,7 +861,7 @@ nav .logo {
 }
 
 .content h1:hover {
-    -webkit-text-stroke: 2px #fff;
+
     color: transparent;
 }
 
@@ -895,7 +904,7 @@ video {
 
 .scroll-left {
     height: 50px;
-    margin-top: 530px;
+    margin-top: 50px;
     overflow: hidden;
     position: relative;
     background: none;
@@ -938,18 +947,19 @@ video {
     transition: box-shadow 0.3s;
 }
 
-.dir:hover{
+.dir:hover {
     box-shadow: 5px 5px 10px #5C5470;
 }
 
-.dir h1{
-    font: 32px 'Google Sans Text' , 'Noto Sans';
+.dir h1 {
+    font: 32px 'Google Sans Text', 'Noto Sans';
 }
 
-.dir p{
-    font: 16px 'Google Sans Text' , 'Noto Sans';
+.dir p {
+    font: 16px 'Google Sans Text', 'Noto Sans';
     color: #000;
 }
+
 .dir .cont {
     align-items: left;
     width: 40%;
@@ -957,7 +967,7 @@ video {
     font-family: 'Montserrat';
 }
 
-.cont p{
+.cont p {
     width: 100%;
     margin-right: 50px;
 }
@@ -1000,21 +1010,24 @@ video {
 }
 
 /* Styling for FAQ section */
-.bottom{
+.bottom {
     display: flex;
     flex-direction: row;
 }
-.bottom_left{
+
+.bottom_left {
     width: 60%;
     margin-left: 50px;
 }
-.bottom_right{
+
+.bottom_right {
     right: 0;
     margin-right: 0px;
     margin-left: 20px;
     width: 30%;
 
 }
+
 .faq-container {
     max-width: 100%;
     margin: 0 auto;
@@ -1041,7 +1054,8 @@ video {
     font-size: 24px;
     padding: 5px 10px;
     background: linear-gradient(300deg, #352F44, #26577C, #526D82);
-    animation: gradient-animation 1s ease infinite;;
+    animation: gradient-animation 1s ease infinite;
+    ;
     color: whitesmoke;
     color: #fff;
     border-radius: 5%;
@@ -1062,7 +1076,7 @@ video {
     margin-bottom: 10px;
     padding-left: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 .faq-question:hover .question {
@@ -1097,7 +1111,7 @@ video {
     align-items: center;
 }
 
-.numc{
+.numc {
     background: linear-gradient(300deg, #352F44, #26577C, #526D82);
     animation: gradient-animation 1s ease infinite;
     color: whitesmoke;
@@ -1123,6 +1137,7 @@ video {
         transform: scale(0);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
@@ -1133,7 +1148,8 @@ video {
 /*footer*/
 .foot {
     position: relative;
-    z-index: 1; /* Set z-index to bring the content on top */
+    z-index: 1;
+    /* Set z-index to bring the content on top */
     color: whitesmoke;
     height: fit-content;
     margin-top: 50px;
@@ -1151,7 +1167,7 @@ video {
 }
 
 .content-container {
-    position: relative; 
+    position: relative;
     z-index: 1;
     background: transparent;
 }
@@ -1160,12 +1176,44 @@ video {
     0% {
         transform: translateY(10px);
     }
+
     100% {
         transform: translateY(0);
     }
 }
 
 ::selection {
-    background-color: #0C356A; 
-    color: #F5F7F8; 
+    background-color: #0C356A;
+    color: #F5F7F8;
+}
+
+#main-header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background: linear-gradient(90deg, whitesmoke 10%, transparent 90%);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#splash--scroller {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40%;
+    width: 100%;
+    height: 90px;
+    background-color: #0C356A;
+    color: whitesmoke;
+}
+
+#splash--scroller a {
+    color: whitesmoke;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
 }
