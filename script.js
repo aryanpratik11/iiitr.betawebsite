@@ -262,3 +262,64 @@ function animateNumbersWhenVisible() {
 }
 
 animateNumbersWhenVisible();
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var header = document.getElementById('main-header');
+    var logo = document.getElementById('header-logo');
+    var videoSection = document.querySelector('.header video'); // Assuming the video section is a direct child of the header
+    var originalImageSrc = './images/logo-blue-desktop.png'; // Original image path
+    var scrolledImageSrc = 'images/footer.png'; // Scrolled image path
+
+    var observer = new IntersectionObserver(
+        function(entries) {
+            var entry = entries[0];
+            if (entry.isIntersecting) {
+                // Header is in the viewport
+                header.style.background = 'linear-gradient(90deg, whitesmoke 10%, transparent 90%)';
+                logo.src = originalImageSrc;
+            } else {
+                // Header is not in the viewport
+                header.style.background = '#0C356A';
+                logo.src = scrolledImageSrc;
+            }
+        },
+        { threshold: 0.5 } // Adjust the threshold as needed
+    );
+
+    observer.observe(videoSection);
+
+    // Initial check
+    updateHeader();
+
+    
+    function updateHeader() {
+        var rect = videoSection.getBoundingClientRect();
+        var navHeight = header.offsetHeight; // Get the height of the navbar
+    
+        if (rect.top <= window.innerHeight - navHeight && rect.bottom >= navHeight) {
+            // Header is in the viewport, taking into account the navbar height
+            header.style.background = 'linear-gradient(90deg, whitesmoke 10%, transparent 90%)';
+            logo.src = originalImageSrc;
+        } else {
+            // Header is not in the viewport
+            header.style.background = '#0C356A';
+            logo.src = scrolledImageSrc;
+        }
+    }
+    
+
+    window.addEventListener('scroll', updateHeader);
+    window.addEventListener('resize', updateHeader);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('#splash--scroller a').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Scroll to the target element smoothly
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
